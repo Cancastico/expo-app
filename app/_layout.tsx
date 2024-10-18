@@ -10,8 +10,11 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <Stack screenOptions={{headerShown:false}} >
+      <Stack.Screen name="Comandas" options={{ title: "Comandas" }} />
+      <Stack.Screen name="Configurações" options={{ title: "Configurações" }} />
+      <Stack.Screen name="Produtos" options={{ title: "Produtos" }} />
+      <Stack.Screen name="Sacola" options={{ title: "Sacola" }} />
       <Stack.Screen name="+not-found" />
     </Stack>
   );
