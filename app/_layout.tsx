@@ -10,9 +10,9 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <Stack screenOptions={{headerShown:false}} >
+    <Stack screenOptions={{headerShown:false}} initialRouteName='Comanda' >
       <Stack.Screen name="Comandas" options={{ title: "Comandas" }} />
-      <Stack.Screen name="Configurações" options={{ title: "Configurações" }} />
+      <Stack.Screen name="Configuracoes" options={{ title: "Configuracoes" }} />
       <Stack.Screen name="Produtos" options={{ title: "Produtos" }} />
       <Stack.Screen name="Sacola" options={{ title: "Sacola" }} />
       <Stack.Screen name="+not-found" />

@@ -170,8 +170,9 @@ export default function ProductModal({ isOpen, product, onClose }: Props) {
 const styles = StyleSheet.create({
   modalContainer: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-start',
     backgroundColor: '#27272a',
+    position:'relative',
   },
   header: {
     backgroundColor: '#3f3f46',
@@ -224,6 +225,9 @@ const styles = StyleSheet.create({
     maxHeight: 256,
   },
   footer: {
+    position:'absolute',
+    width:'100%',
+    bottom:0,
     backgroundColor: '#3f3f46',
     padding: 16,
     gap: 8,

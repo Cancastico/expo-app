@@ -80,10 +80,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#27272a',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingTop: 16,
+    paddingTop: 32,
     paddingBottom: 10,
-    paddingHorizontal: 4,
-    gap: 4,
+    paddingHorizontal: 16,
+    gap: 16,
   },
   header: {
     position: 'relative',

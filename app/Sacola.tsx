@@ -9,12 +9,14 @@ import formatToCurrency from "@/utils/fortmatToCurrency";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFocusEffect } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 
 export default function Sacola({ navigation }: any) {
   const { items, totalValue, updateItemQuantity, clearBag } = useBag();
   const { comanda, mesa, setData } = useOrder();
   const { axios } = useAxios();
   const [orderFetch, setOrderFetch] = useState<OrderFetch>();
+  const router = useRouter();
 
   useFocusEffect(
     useCallback(() => {
@@ -26,7 +28,8 @@ export default function Sacola({ navigation }: any) {
     await orderFetch?.create(items, comanda, mesa).then(() => {
       clearBag();
       setData(undefined, undefined);
-      navigation.navigate('Comandas');
+      router.dismissAll();
+      router.navigate('/Comandas');
     });
   }
 
@@ -84,7 +87,9 @@ export default function Sacola({ navigation }: any) {
             <Text style={styles.footerText}>Valor Total</Text>
             <Text style={styles.footerText}>{formatToCurrency(totalValue)}</Text>
           </View>
-          <GreenButton onPress={handleSubmit} label="Finalizar" />
+          <View style={styles.footerButton}>
+            <GreenButton onPress={handleSubmit} label="Finalizar" />
+          </View>
         </View>
       )}
     </View>
@@ -92,9 +97,10 @@ export default function Sacola({ navigation }: any) {
 }
 
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
-    paddingVertical: 10,
+    paddingTop: 32,
     backgroundColor: '#27272a',
   },
   header: {
@@ -195,8 +201,9 @@ const styles = StyleSheet.create({
     minWidth: 32,
   },
   footer: {
+    display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: "space-between",
     width: '100%',
     backgroundColor: '#3f3f46',
     padding: 16,
@@ -207,5 +214,8 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '500',
     fontSize: 24,
+  },
+  footerButton: {
+    width:'50%'
   },
 });

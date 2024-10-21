@@ -45,8 +45,10 @@ export default function Comandas() {
         if (res) {
           setIP(res);
         }
+
         clearOrder();
         clearBag();
+        getOrders();
       });
     }, [])
   );
@@ -63,7 +65,7 @@ export default function Comandas() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => { router.navigate('/Configurações') }} style={styles.configButton}>
+      <TouchableOpacity onPress={() => { router.navigate('/Configuracoes') }} style={styles.configButton}>
         <FontAwesome name="cog" size={24} color="black" />
         <Text style={styles.configText}>Configurações</Text>
       </TouchableOpacity>
@@ -111,16 +113,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#27272a',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingTop: 16,
+    paddingTop: 50,
     paddingBottom: 10,
-    paddingHorizontal: 4,
+    paddingHorizontal: 16,
+    marginTop:0,
     gap: 2,
   },
   configButton: {
     backgroundColor: '#d1d5db',
     flexDirection: 'row',
     gap: 2,
-    padding: 2,
+    padding: 8,
     borderRadius: 16,
   },
   configText: {
@@ -131,19 +134,20 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     marginBottom: 10,
+    gap:16,
   },
   orderContainer: {
     flexDirection: 'column',
     gap: 4,
     backgroundColor: '#475569',
     width: '100%',
-    padding: 4,
-    marginBottom: 2,
+    padding: 16,
+    marginBottom: 8,
     borderRadius: 8,
   },
   orderInfo: {
     flexDirection: 'row',
-    gap: 2,
+    gap: 32,
   },
   orderText: {
     color: 'white',

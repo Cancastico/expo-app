@@ -121,6 +121,7 @@ export default function CommandTableModal({ isOpen, onClose, setData }: Props) {
           />
         </View>
 
+      </View>
         {/* BUTTON */}
         <View style={[styles.footer, keyboardOpen && { display: 'none' }]}>
           <GreenButton
@@ -129,21 +130,22 @@ export default function CommandTableModal({ isOpen, onClose, setData }: Props) {
             onPress={handleSubmit(submit)}
           />
         </View>
-      </View>
     </Modal>
   );
 }
 
 const styles = StyleSheet.create({
   modalContainer: {
+    position:'relative',
+    height:'100%',
     flex: 1,
-    justifyContent: 'flex-end',
-    backgroundColor: 'rgba(0,0,0,1)',
+    justifyContent: 'flex-start',
+    backgroundColor: '#27272a',
   },
   header: {
     padding: 16,
     backgroundColor: '#282828',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     justifyContent: 'center',
   },
   inputContainer: {
@@ -163,7 +165,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   footer: {
+    position:'absolute',
+    bottom:0,
     padding: 16,
+    width:'100%',
     backgroundColor: '#282828',
   }
 });

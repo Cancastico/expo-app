@@ -25,6 +25,7 @@ export default function GreenButton({ label, onPress, disabled }: Props) {
 
 const styles = StyleSheet.create({
   button: {
+    width:'100%',
     paddingVertical: 12,
     borderRadius: 20,
     justifyContent: 'center',
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#38A169', // Green 500
   },
   disabled: {
-    backgroundColor: '#A0AEC0', // Gray 300
+    backgroundColor: '#7cb195', // Gray 300
   },
   label: {
     color: '#FFFFFF', // White text

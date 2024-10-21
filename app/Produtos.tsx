@@ -160,10 +160,12 @@ export default function Produtos() {
             <Text style={styles.footerText}>Valor Total</Text>
             <Text style={styles.footerText}>{formatToCurrency(totalValue)}</Text>
           </View>
-          <GreenButton
-            label="Ver Sacola"
-            onPress={() => { router.navigate('/Sacola'); }}
-          />
+          <View style={styles.footerButton}>
+            <GreenButton
+              label="Ver Sacola"
+              onPress={() => { router.navigate('/Sacola'); }}
+            />
+          </View>
         </View>
       )}
       <ProductModal isOpen={seletedProduct != undefined} onClose={() => { setSelectedProduct(undefined); }} product={seletedProduct} />
@@ -172,6 +174,9 @@ export default function Produtos() {
 }
 
 const styles = StyleSheet.create({
+  footerButton:{
+    width:'50%',
+  },
   container: {
     flex: 1,
     backgroundColor: '#27272a',

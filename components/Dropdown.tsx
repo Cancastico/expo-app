@@ -50,6 +50,7 @@ function Dropdown({ defaultValue, onChange, options }: Props) {
 
 const styles = StyleSheet.create({
   container: {
+    width:'30%',
     position: 'relative',
   },
   button: {
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   dropdown: {
+    width:'100%',
     position: 'absolute',
     backgroundColor: '#3B82F6',
     borderBottomLeftRadius: 16,

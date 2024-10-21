@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "expo-trainee",
-    "slug": "expo-trainee",
+    "name": "commandaApp",
+    "slug": "commandaApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -20,7 +20,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.cancastico.expotrainee"
+      "package": "com.cancastico.commandaAppRefactor"
     },
     "web": {
       "bundler": "metro",
