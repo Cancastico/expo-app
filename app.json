@@ -33,11 +33,11 @@
     "experiments": {
       "typedRoutes": true
     },
+    "owner": "cancastico",
     "extra": {
       "eas": {
-        "projectId": "e943ef3f-af56-4a18-9bd7-2ce4a62c1a43"
+        "projectId": "6a3ba6f5-b8e4-4301-a09e-32a832205773"
       }
-    },
-    "owner": "cancastico"
+    }
   }
 }

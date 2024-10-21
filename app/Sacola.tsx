@@ -29,7 +29,7 @@ export default function Sacola({ navigation }: any) {
       clearBag();
       setData(undefined, undefined);
       router.dismissAll();
-      router.navigate('/Comandas');
+      router.navigate('/');
     });
   }
 

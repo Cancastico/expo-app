@@ -13,6 +13,7 @@ import { getUTCDate } from "@/utils/getUtcDate";
 import { getUTCHour } from "@/utils/getUtcHour";
 import { useFocusEffect } from "@react-navigation/native";
 import { useRouter } from "expo-router";
+import { Toast } from "toastify-react-native";
 
 export default function Comandas() {
   const [orders, setOrders] = useState<Order[]>([]);
@@ -28,6 +29,10 @@ export default function Comandas() {
     setOrders([]);
     await orderFetch?.get().then((res) => {
       setOrders(res.data.result);
+    }).catch((e) => {
+      Toast.error(e);
+    }).finally(()=>{
+      Toast.info('Funcionou')
     });
   }
 
@@ -48,7 +53,7 @@ export default function Comandas() {
 
         clearOrder();
         clearBag();
-        getOrders();
+        getOrders()
       });
     }, [])
   );
@@ -69,7 +74,7 @@ export default function Comandas() {
         <FontAwesome name="cog" size={24} color="black" />
         <Text style={styles.configText}>Configurações</Text>
       </TouchableOpacity>
-      <Text>{}</Text>
+      <Text>{ }</Text>
       <ScrollView style={styles.scrollView}>
         {orders.map((order, index) => {
           return (
@@ -116,7 +121,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingBottom: 10,
     paddingHorizontal: 16,
-    marginTop:0,
+    marginTop: 0,
     gap: 2,
   },
   configButton: {
@@ -134,7 +139,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     marginBottom: 10,
-    gap:16,
+    gap: 16,
   },
   orderContainer: {
     flexDirection: 'column',

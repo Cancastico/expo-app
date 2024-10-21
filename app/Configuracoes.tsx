@@ -23,7 +23,7 @@ export default function Configuracoes() {
 
   function submit(form: form) {
     storageController.set('IP', form.ipDatabase).then(() => {
-      router.canGoBack();
+      router.navigate('/');
     });
   }
 
@@ -41,7 +41,7 @@ export default function Configuracoes() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>CONFIGURAÇÕES</Text>
-        <AntDesign style={styles.backIcon} name="arrowleft" size={32} color="white" onPress={() => { router.canGoBack() }} />
+        <AntDesign style={styles.backIcon} name="arrowleft" size={32} color="white" onPress={() => { router.navigate('/') }} />
       </View>
       <View style={styles.formContainer}>
         <View style={styles.inputGroup}>

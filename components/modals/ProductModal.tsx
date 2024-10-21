@@ -169,6 +169,7 @@ export default function ProductModal({ isOpen, product, onClose }: Props) {
 
 const styles = StyleSheet.create({
   modalContainer: {
+    paddingTop:24,
     flex: 1,
     justifyContent: 'flex-start',
     backgroundColor: '#27272a',

@@ -93,7 +93,7 @@ export default function Produtos() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>PRODUTOS</Text>
-        <AntDesign style={styles.backIcon} name="arrowleft" size={32} color="white" onPress={() => { router.canGoBack(); }} />
+        <AntDesign style={styles.backIcon} name="arrowleft" size={32} color="white" onPress={() => { router.navigate('/') }} />
       </View>
       <View style={styles.searchContainer}>
         <View style={styles.searchRow}>
@@ -125,6 +125,7 @@ export default function Produtos() {
       </View>
       {products.length > 0 ? (
         <FlatList
+        style={styles.productContainer}
           data={products}
           keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
@@ -174,13 +175,17 @@ export default function Produtos() {
 }
 
 const styles = StyleSheet.create({
+  productContainer:{
+    width:'100%',
+    paddingHorizontal:16,
+  },
   footerButton:{
     width:'50%',
   },
   container: {
     flex: 1,
     backgroundColor: '#27272a',
-    paddingTop: 10,
+    paddingTop: 48,
     width: '100%',
     position: 'relative',
   },
